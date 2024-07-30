@@ -22,6 +22,7 @@ section {
   z-index: 1;
 }
 
+
 .textBx {
  padding-top: 300px;
 }
@@ -44,18 +45,52 @@ section {
   font-weight: 500;
 }
 
-.btn {
-  position: relative;
-  background: #2196f3;
-  display: inline-block;
-  color: #fff;
-  margin-top: 20px;
-  padding: 10px 30px;
-  font-size: 18px;
+figure {
+  width: 200px;
+  height: 60px;
+  margin: 100px 10px;
+  cursor: pointer;
+  perspective: 500px;
+  -webkit-perspective: 500px;
+}
+
+figure div {
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+}
+
+figure:hover div {
+  transform: rotateX(-90deg);
+}
+
+figure span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 50px;
+  font-size: 17pt;
+  text-align: center;
   text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-weight: 500;
+}
+
+figure span:nth-child(1) {
+  color: #fff;
+  transform: translate3d(0, 0, 30px);
+  -webkit-transform: translate3d(0, 0, 30px);
+}
+
+figure span:nth-child(2) {
+  color: #fff;
+  background: #2196f3;
+  border: 4px solid #2196f3;
+  transform: rotateX(90deg) translate3d(0, 0, 30px);
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);
 }
 
 header {
@@ -225,6 +260,11 @@ img,
   .card-columns {
     column-count: 5;
   }
+
+  .contvideo video{
+    width: 500px;
+    height: auto;
+  }
 }
 
 
@@ -385,6 +425,44 @@ img,
 
 
 /* RESPONSIVIDADE */
+
+
+@media (min-width: 1200px){
+  .banner {
+    position: relative;
+    min-height: 100vh;
+    background: url(imagens/sid-inlustrada-3op.jpg) no-repeat #000;
+    background-size: contain;
+    background-position: right ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .textBx {
+   padding-top: 300px;
+  }
+  
+  .banner h2 {
+    font-size: 4em;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  
+  .banner h2 span {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+  
+  .banner h3 {
+    font-size: 2em;
+    color: #fff;
+    font-weight: 500;
+  }
+
+}
 
 @media (max-width: 991px) {
   header, header.sticky {
